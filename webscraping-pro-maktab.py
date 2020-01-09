@@ -24,7 +24,7 @@ input_field1.send_keys('2')
 
 input_field2 = driver.find_element_by_id('sum2')
 input_field2.send_keys('3')
-push_button2 = driver.find_element_
+push_button2 = driver.find_element_by_xpath('//*[(@id = "gettotal")]//*[contains(concat( " ", @class, " " ), concat( " ", "btn-default", " " ))]')
 push_button2.click()
 #driver.close()
 
