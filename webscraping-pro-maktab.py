@@ -31,8 +31,14 @@ push_button2.click()
 url_url = 'https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html'
 url_url_url = 'http://demo.guru99.com/test/newtours/register.php'
 driver.get(url_url)
+
+# get Date on x
 x = datetime.datetime.now()
+# get day of week in notaion
 day_hafteh = x.strftime('%A')
+
+
+#select date
 select_dropdownbox = driver.find_element_by_xpath("//*[(@id = 'select-demo')]/option[text()='%s']" %day_hafteh).click() 
 
 driver.close()
