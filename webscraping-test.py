@@ -1,28 +1,21 @@
 import requests
 from bs4 import BeautifulSoup
+import xlsxwriter
 
-url = 'https://www.amazon.com/s?k=j+j+ballard&dc&ref=a9_sc_1'
-#headers={'User-Agent':'my app.0.0.1','Accept-Language'
-#:'en-En, en,q=.5'}
-r = requests.get(url)
+workbook = xlsxwriter.Workbook('result.xlsx')
+worksheet = workbook.add_worksheet()
 
+url = 'https://www.amazon.com/s?k=jj+balard&ref=nb_sb_noss'
+headers={'User-Agent':'my app.0.0.1','Accept-Language':'en-Us ,en,q=.5'}
+r = requests.get(url,headers=headers)
 
-soup = BeautifulSoup(r.text,'html.parser')
-#print(soup)
-title_soup = soup.select('.s-image')
-print(title_soup)
+out_put = r.text
+soup = BeautifulSoup(out_put,'html.parser')
 
+title_soup = soup.select('.a-color-base.a-text-normal')
+row = 0
 for i in title_soup:
     print(i.get_text())
-
-
-
-#soup = BeautifulSoup(r.text,'html.parser')
-#print(soup)
-#my_soup = soup('span',{'class':'a-size-small a-color-base aok-align-center aok-inline-block'})
-#print(my_soup)
-#for i in my_soup:
-#    print(i.get_text())
-#my_soup_list = my_soup[2].get_text()
-#print(my_soup_list)
-
+    worksheet.write_string(row,0,i.get_text())
+    row +=1
+workbook.close()
