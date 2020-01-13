@@ -20,7 +20,7 @@ pass_field.send_keys('rezareza')
 
 login_button = driver.find_element_by_class_name('btn-primary')
 login_button.click()
-driver.close()
+#driver.close()
 
 
 print('---------------------------')

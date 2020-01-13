@@ -6,15 +6,14 @@ import time
 session = sessions.FuturesSession()
 futures = [
 session.get('https://www.tasnimnews.com')
-    for i in range(0,1)
+    for i in range(0,16)
 
 ]
 
 results =[
 #f.result().status_code
 f.result().content  
-    for f in futures
-
+    for f in futures:
 
 ] 
 print('results : %s' % results)
