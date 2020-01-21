@@ -35,11 +35,12 @@ driver.get(url_url)
 # get Date on x
 x = datetime.datetime.now()
 # get day of week in notaion
+print(x)
 day_hafteh = x.strftime('%A')
 
 
 #select date
 select_dropdownbox = driver.find_element_by_xpath("//*[(@id = 'select-demo')]/option[text()='%s']" %day_hafteh).click() 
 
-driver.close()
+#driver.close()
 

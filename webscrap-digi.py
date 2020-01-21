@@ -12,7 +12,6 @@ out_put = r.text
 soup = BeautifulSoup(out_put,'html.parser')
 workbook = xlsxwriter.Workbook('result_mo.xlsx')
 worksheet = workbook.add_worksheet()
-
 title = soup.select('.gadName')
 row = 0
 for i in title:
