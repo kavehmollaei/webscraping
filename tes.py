@@ -11,7 +11,7 @@ driver.maximize_window()
 driver.get(url)
 #ketab=Books
 select_field = driver.find_element_by_css_selector('#nav-search .nav-left').click()
-#select_Books = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "nav-focus", " " ))]').click()
+select_Books = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "nav-focus", " " ))]').click()
 el = driver.find_element_by_id('searchDropdownBox')
 for option in el.find_elements_by_tag_name('option'):
     if option.text == 'Books':
